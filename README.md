@@ -24,7 +24,7 @@ Você pode acessar a versão publicada clicando aqui:
 ## 📸 Capturas de tela
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/c94ca74c-cdbd-4e24-b526-fa78b8f4557d" alt="Print 1" width="600">
+  <img src="https://github.com/user-attachments/assets/18f06ec2-fd7b-489b-ab1d-9ab8706ecf52" alt="Print 1" width="600">
   <br><br>
   <img src="https://github.com/user-attachments/assets/70c07915-5b8a-4673-bbce-a40b387f6b48" alt="Print 2" width="600">
   <br><br>
