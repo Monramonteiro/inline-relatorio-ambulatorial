@@ -1,120 +1,211 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solicitações Ambulatoriais</title>
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
-<body style="margin: 0; padding: 0; background-color: #ffffff; font-family: 'Poppins', sans-serif;">
-    <header style="position: relative; width: 100%; max-width: 1280px; margin: auto; display: flex; justify-content: center; align-items: center; padding: 10px;">
-      <img src="img/Banner site CER.jpg" alt="banner principal" style="height: auto; display: block; max-width: 100%;">
-    </header>
+    <title>Relatório Ambulatorial</title>
+  </head>
+  <body style="margin:0; padding:0; background-color:#ffffff; font-family: Arial, sans-serif;">
 
-    <div>
-        <p style="font-size: 18px; max-width: 90%; text-align: center; margin: 20px auto;">
-            O relatório abaixo apresenta um resumo das <span style="color: #0e4877; font-weight: 600;">SOLICITAÇÕES AMBULATORIAIS</span> registradas no sistema no dia anterior. São detalhadas as quantidades de solicitações em <span style="font-weight: 600;">fila</span> ou <span style="font-weight: 600;">pendentes</span>, <span style="font-weight: 600;">canceladas</span>, <span style="font-weight: 600;">agendadas</span> e o total geral de entradas no sistema. Esses dados ajudam a acompanhar a demanda e eficiência do processo de agendamento e atendimento.
-        </p>
-    </div>
+    <!-- Container principal -->
+    <table width="100%" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #ffffff;">
+      <tr>
+        <td align="center">
 
-    <main>
-    <section style="text-align: center; font-size: 20px; font-weight: 600; color: #0e4877; padding: 0 10px; margin-top: 40px;">
-      <p>Solicitações do dia {{ $json.dia_anterior}}</p>
-    </section>
+          <!-- Conteúdo central fixo -->
+          <table width="600" cellpadding="0" cellspacing="0" border="0" style="width:600px; max-width:100%;">
 
-    <div style="max-width: 700px; margin: 20px auto; background-color: #f7f7f7; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #cfcfcf;">
-    <table style="width: 100%; border-collapse: separate; border-spacing: 1; overflow: hidden; box-shadow: 0 2px 8px #0000001a;">
-      <thead>
-        <tr>
-          <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: white; font-weight: 600; text-align: center;">STATUS</th>
-          <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: white; font-weight: 600; text-align: center;">QUANTIDADE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background-color: #ffffff;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">EM FILA</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">{{ $json.total_emfila }}</td>
-        </tr>
-         <tr style="background-color: #e6e6e6;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">PENDENTE</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">{{ $json.total_pendentes }}</td>
-        </tr>
-        <tr style="background-color: #ffffff;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">CANCELADAS</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">{{ $json.total_cancelados }}</td>
-        </tr>
-        <tr style="background-color: #e6e6e6;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">AGENDADAS</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">{{ $json.total_agendados }}</td>
-        </tr>
-        <tr style="background-color: #0e4877; color: #ffdb58; font-weight: 600;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; text-align: center;">TOTAL DE ENTRADAS</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; text-align: center;">{{ $json.total_entradas }}</td>
-        </tr>
-      </tbody>
+            <!-- Banner -->
+            <tr>
+              <td align="center" style="padding: 10px;">
+                <img src="https://github.com/Monramonteiro/inline-relatorio-ambulatorial/blob/main/img/Banner%20site%20CER.jpg?raw=true" alt="banner principal" style="display:block; width:100%; height:auto; max-width:600px;">
+              </td>
+            </tr>
+
+            <!-- Parágrafo de introdução -->
+            <tr>
+              <td style="padding: 20px; font-size: 16px; text-align: center; color: #000000;">
+                O relatório abaixo apresenta um resumo das <span style="color: #0e4877; font-weight: bold;">SOLICITAÇÕES AMBULATORIAIS</span> registradas no sistema no dia anterior. São detalhadas as quantidades de solicitações em <strong>fila</strong> ou <strong>pendentes</strong>, <strong>canceladas</strong>, <strong>agendadas</strong> e o total geral de entradas no sistema.
+              </td>
+            </tr>
+
+            <!-- Título de solicitações -->
+            <tr>
+              <td align="center" style="font-size: 18px; font-weight: bold; color: #0e4877; padding-top: 30px;">
+                Solicitações do dia {{ $json.dia_anterior }}
+              </td>
+            </tr>
+
+            <!-- Tabela de solicitações -->
+            <tr>
+              <td style="padding: 20px;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                  <tr style="background-color: #0e4877; color: #ffffff;">
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">STATUS</th>
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">QUANTIDADE</th>
+                  </tr>
+                  <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">EM FILA</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.pacientes_emfila }}</td>
+                  </tr>
+                  <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">PENDENTE</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.pacientes_pendentes }}</td>
+                  </tr>
+                  <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CANCELADA</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.pacientes_cancelados }}</td>
+                  </tr>
+                  <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">AGENDADA</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.pacientes_agendados }}</td>
+                  </tr>
+                  <tr style="background-color: #0e4877; color: #ffdb58; font-weight: bold;">
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;">TOTAL DE ENTRADAS</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;">{{ $json.total_entradas }}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Título de agendamentos -->
+            <tr>
+              <td align="center" style="font-size: 18px; font-weight: bold; color: #0e4877; padding-top: 30px;">
+                Agendamentos de consultas / Exames do dia {{ $json.dia_anterior }}
+              </td>
+            </tr>
+
+            <!-- Tabela de agendamentos -->
+            <tr>
+              <td style="padding: 20px;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                  <tr style="background-color: #0e4877; color: #ffffff;">
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">INDICADOR</th>
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">QUANTIDADE</th>
+                  </tr>
+                  <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">SOLICITAÇÕES SEM CHECK-IN</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.pacientes_semcheckin }}</td>
+                  </tr>
+                  <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CHEGADAS CONFIRMADAS</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.pacientes_presentes }}</td>
+                  </tr>
+                  <tr style="background-color: #0e4877; color: #ffdb58; font-weight: bold;">
+                  <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">FALTAS REGISTRADAS</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.pacientes_faltantes }}</td>
+                  </tr>
+                  <tr style="background-color: #0e4877; color: #ffdb58; font-weight: bold;">
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;">TOTAL DE CONSULTA/EXAMES REALIZADOS</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;">{{ $json.total_consultas_exames }}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Título de produção -->
+            <tr>
+              <td align="center" style="font-size: 18px; font-weight: bold; color: #0e4877; padding-top: 30px;">
+                Produção do Complexo Estadual de Regulação do dia {{ $json.dia_anterior }}
+              </td>
+            </tr>
+
+            <!-- Tabela de produção -->
+             <tr>
+              <td style="padding: 20px;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                  <tr style="background-color: #0e4877; color: #ffffff;">
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">INDICADOR</th>
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">QUANTIDADE</th>
+                  </tr>
+                   <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">REUNI</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $('Execução da Query').item.json.agendamentos_reuni }}</td>
+                  </tr>
+               <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CRECE</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $('Execução da Query').item.json.agendamentos_crece }}</td>
+                  </tr>
+               <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG BAIXADA LITORÂNEA</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG CENTRO-SUL</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG MÉDIO PARAÍBA</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG METROPOLITANA I - CAPITAL</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG METROPOLITANA I - BF</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG METROPOLITANA II</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG NOROESTE</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG NORTE</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+               <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">CREG SERRANA</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.agendamentos_realizados }}</td>
+                  </tr>
+                </table>
+              
+            <!-- Título de pacientes -->
+            <tr>
+              <td align="center" style="font-size: 18px; font-weight: bold; color: #0e4877; padding-top: 30px;">
+                Total de Pacientes Em Fila e Pendentes no dia {{ $json.dia_anterior }}
+              </td>
+            </tr>
+
+            <!-- Tabela de pacientes -->
+            <tr>
+              <td style="padding: 20px;">
+                <table width="100%" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse;">
+                  <tr style="background-color: #0e4877; color: #ffffff;">
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">INDICADOR</th>
+                    <th style="padding: 12px; border: 1px solid #dddddd; text-align: center;">QUANTIDADE</th>
+                  </tr>
+                  <tr style="background-color: #ffffff;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">TOTAL EM FILA</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.total_emfila }}</td>
+                  </tr>
+                  <tr style="background-color: #0e4877; color: #ffdb58; font-weight: bold;">
+                  <tr style="background-color: #f2f2f2;">
+                    <td style="padding: 12px; border: 1px solid #dddddd;">TOTAL PENDENTES</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd;">{{ $json.total_pendentes }}</td>
+                  </tr>
+                  <tr style="background-color: #0e4877; color: #ffdb58; font-weight: bold;">
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;">TOTAL DE SOLICITAÇÕES</td>
+                    <td style="padding: 12px; border: 1px solid #dddddd; text-align: center;">{{ $json.total_solicitacoes }}</td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Rodapé -->
+            <tr>
+              <td align="center" style="padding: 30px; font-weight: 600; font-size: 12px; color: #575757;">
+                Relatório gerado automaticamente no dia {{ $json.data_formatada }} às {{ $json.hora_formatada }}<br><br>
+                <img src="https://github.com/Monramonteiro/relatorio-ambulatorial/blob/main/img/Avatar_-Saude.png?raw=true" alt="logo do governo do estado" style="width: 200px; display: block; margin: auto;">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
     </table>
-    </div>
-
-    <section style="text-align: center; font-size: 20px; font-weight: 600; color: #0e4877; padding: 0 10px; margin-top: 40px;">
-      <p>Agendamentos de consultas / Exames do dia {{ $json.dia_anterior}}</p>
-    </section>
-
-   <div style="max-width: 700px; margin: 20px auto; background-color: #f7f7f7; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #cfcfcf;">
-    <table style="width: 100%; border-collapse: separate; border-spacing: 1; overflow: hidden; box-shadow: 0 2px 8px #0000001a;">
-      <thead>
-        <tr>
-          <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: white; font-weight: 600; text-align: center;">INDICADOR</th>
-          <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: white; font-weight: 600; text-align: center;">QUANTIDADE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background-color: #ffffff;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">SOLICITAÇÕES SEM CHECK-IN</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">{{ $json.total_emfila }}</td>
-        </tr>
-         <tr style="background-color: #e6e6e6;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">CHEGADAS CONFIRMADAS</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">{{ $json.total_pendentes }}</td>
-        </tr>
-        <tr style="background-color: #ffffff;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; text-align: center; color: #ffdb58; font-weight: 600;">FALTAS REGISTRADAS</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; text-align: center; color: #ffdb58; font-weight: 600;">{{ $json.total_cancelados }}</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-    <section style="text-align: center; font-size: 20px; font-weight: 600; color: #0e4877; padding: 0 10px; margin-top: 40px;">
-      <p>Total de Pacientes Em Fila e Pendentes no dia {{ $json.dia_anterior}}</p>
-    </section>
-
-   <div style="max-width: 700px; margin: 20px auto; background-color: #f7f7f7; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #cfcfcf;">
-    <table style="width: 100%; border-collapse: separate; border-spacing: 1; overflow: hidden; box-shadow: 0 2px 8px #0000001a;">
-      <thead>
-        <tr>
-          <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: white; font-weight: 600; text-align: center;">INDICADOR</th>
-          <th style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: white; font-weight: 600; text-align: center;">QUANTIDADE</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr style="background-color: #ffffff;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">TOTAL EM FILA</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd;">{{ $json.total_emfila }}</td>
-        </tr>
-         <tr style="background-color: #e6e6e6;">
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: #ffdb58; font-weight: 600; text-align: center;">TOTAL PENDENTES</td>
-          <td style="padding: 12px 15px; text-align: left; border-bottom: 1px solid #dddddd; background-color: #0e4877; color: #ffdb58; font-weight: 600; text-align: center;">{{ $json.total_pendentes }}</td>
-        </tr>
-      </tbody>
-    </table>
-    </div>
-
-    <footer style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 20px; margin-top: 5px;">
-        <p style="font-size: 0.8rem; text-align: center; padding: 20px; color: #575757;">
-          Relatório gerado automaticamente no dia {{ $json.data_formatada }} às {{ $json.hora_formatada }}
-        </p>
-        <img src="img/Avatar_Color_GovRJ.png" alt="logo do governo do estado" style="width: 270px; margin-top: -50px;">
-    </footer>
-</body>
+  </body>
 </html>
