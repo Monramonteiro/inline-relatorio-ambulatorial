@@ -26,16 +26,18 @@ Você pode acessar a versão publicada clicando aqui:
 <p align="center">
   <img src="https://github.com/user-attachments/assets/18f06ec2-fd7b-489b-ab1d-9ab8706ecf52" alt="Print 1" width="600">
   <br><br>
-  <img src="https://github.com/user-attachments/assets/70c07915-5b8a-4673-bbce-a40b387f6b48" alt="Print 2" width="600">
+  <img src="https://github.com/user-attachments/assets/292a1ca3-cc5a-416c-a7eb-7c76185f7c2e" alt="Print 2" width="600">
   <br><br>
-  <img src="https://github.com/user-attachments/assets/8a0bb3e9-9a3e-48d5-9663-86f03f562f8b" alt="Print 3" width="600">
+  <img src="https://github.com/user-attachments/assets/22aa5525-8f44-44fa-9f8c-2da70a5c3c6a" alt="Print 3" width="600">
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/0c454241-b915-4488-a3b4-8e003cdc9904" alt="Print 4" width="600">
 </p>
 
 ---
 
 ## 📚 Objetivo
 
-Este projeto é uma página web desenvolvida com HTML e CSS inline para organização de solicitações ambulatoriais da Secretaria de Saúde do Estado do Rio de Janeiro.  
+Este projeto é uma página web desenvolvida com HTML e CSS inline para visualização em e-mail. 
 O relatório apresenta um resumo das solicitações registradas no sistema no dia anterior, detalhando a quantidade geral de entradas.  
 Esses dados ajudam a acompanhar a demanda e a eficiência do processo de agendamento e atendimento.
 
